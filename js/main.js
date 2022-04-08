@@ -1,22 +1,11 @@
-import { double, UserBuilder, Address } from "./api";
+import { Rule } from "./api.js";
 
 window.addEventListener("load", function () {
-    console.log(double(5))
-
-    function ds(programmers) {
-
-    }
-
-
-    
-    let address = new Address(200, "uwu street")
-
-    let builder = new UserBuilder('bob')
-        .setAge(69)
-        .setPhone(949666696)
-        .setAddress(address)
+    let uwu = new Rule('settings')
+        .setPlayerOneDivId('uwu')
+        .setPlayerOneNameId('uwu')
         .build()
 
-    console.log(builder)
-
+    console.log(uwu)
 });
+
