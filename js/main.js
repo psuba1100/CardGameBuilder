@@ -1,4 +1,4 @@
-import { double, UserBuilder, Address } from "./notmain.js";
+import { double, UserBuilder, Address } from "./api";
 
 window.addEventListener("load", function () {
     console.log(double(5))
