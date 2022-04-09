@@ -76,7 +76,21 @@ export class Rule {
         return this
     }
 
+    setPlayerOneName(_input){
+        this.type.p1n = _input
+        return this
+    }
+
+    setPlayerOneNamePromptMessage(_p1npm){
+        this.type.p1npm = _p1npm
+        if(this.type.p1n != 'prompt'){
+            console.error("You can't use setPlayerOneNamePromptMessage in case setPlayerOneName is not defined or it does't equals to prompt")
+        }
+        return this
+    }
+
     build() {
+        console.log(`CARDGAMEBUILDER DEBUG: Class Rule has been created`)
         return this.type
     }
 }

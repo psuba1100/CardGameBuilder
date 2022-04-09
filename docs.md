@@ -15,6 +15,9 @@ ___
 ___
 
 #### Ako nastaviť projekt
+
+<br/>
+
 **1. Sťahovanie example súboru**
 
 Toto je veľmi jednoduchý proces. Váše súbory by mali vyzerať nejako takto:
@@ -67,15 +70,37 @@ window.addEventListener("load", function () {
 });
 ```
 ****
-<br/>
-<br/>
+
 <br/>
 
 #### Základné nastavenia
 
+Každá aplikácia potrebuje settings na to aby fungovala správne. Settings **musia obsahovať:**
 
+1. Id základného divider-u pre hráča *(1,2,3,4)*
+1. Id textu obsahujúceho meno hráča *(1,2,3,4)*
+1. Zdroj mena hráča *(1,2,3,4)*
 
+**Ako to nastaviť:**
 
+**1. vytvorenie class**
+> Musíte sa usitiť, že **váš hlavný súbor obsahuje základný import.** *O základný import sa nemusíte starať pokiaľ sti si sitahli example source code.*
+
+**Import:**
+
+```javascript
+import { Rule } from "./api.js";
+```
+
+<br/>
+
+Následne vytvorte class rule pod názvom aký si zvolíte. Je na vás aký typ premennej použijete (var, let, const) my však odporúčame **let alebo const** pretože zaberajú menej výkonu.
+
+```javascript
+let settings = new Rule('settings')
+```
+
+>Uistite sa že ste do rule pridali parameter **'settings'**
 
 
 
