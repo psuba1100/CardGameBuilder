@@ -70,6 +70,7 @@ window.addEventListener("load", function () {
 <br/>
 <br/>
 <br/>
+
 #### Základné nastavenia
 
 
