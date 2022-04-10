@@ -1,6 +1,6 @@
- function double(n) {
-    return n * 2;
-}
+import {Shuffle, Random, RandomBi} from './ssapi.js'
+
+
 
  class Address{
     constructor(_zip, _street){
