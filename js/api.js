@@ -1,50 +1,5 @@
 import {Shuffle, Random, RandomBi} from './ssapi.js'
 
-
-
- class Address{
-    constructor(_zip, _street){
-        this.zip = _zip
-        this.street = _street
-    }
-}
-
- class User{
-    constructor(_name){
-        this.name = _name
-    }
-}
-
-
-
- class UserBuilder {
-    constructor(_name) {
-        this.user = new User(_name)
-    }
-
-    setAge(_age){
-        this.user.age = _age
-        return this
-    }
-
-    setPhone(_phone){
-        this.user.phone = _phone
-        return this
-    }
-
-    setAddress(_address){
-        this.user.address = _address
-        this.user.zip = this.user.address.zip || 0
-        this.user.street = this.user.address.street || 0
-        return this
-    }
-
-    build() {
-        return this.user
-    }
-}
-
-
 class rule {
     constructor(_type){
         this.type = _type
@@ -85,6 +40,35 @@ export class Rule {
         this.type.p1npm = _p1npm
         if(this.type.p1n != 'prompt'){
             console.error("You can't use setPlayerOneNamePromptMessage in case setPlayerOneName is not defined or it does't equals to prompt")
+        }
+        return this
+    }
+
+    setPlayerTwoDivId(_p2divid){
+        this.type.p2divid = _p2divid
+        if(typeof this.type.p2divid != "string"){
+            console.error("Value of PlayerTwoDivId can't be anything else than string.")
+        }
+        return this
+    }
+
+    setPlayerTwoNameId(_p2nid){
+        this.type.p2nid = _p2nid
+        if(typeof this.type.p2nid != "string"){
+            console.error("Value of PlayerTwoNameId can't be anything else than string.")
+        }
+        return this
+    }
+
+    setPlayerTwoName(_input){
+        this.type.p2n = _input
+        return this
+    }
+
+    setPlayerTwoNamePromptMessage(_p2npm){
+        this.type.p2npm = _p2npm
+        if(this.type.p2n != 'prompt'){
+            console.error("You can't use setPlayerTwoNamePromptMessage in case setPlayerTwoName is not defined or it does't equals to prompt")
         }
         return this
     }
