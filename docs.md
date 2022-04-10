@@ -100,7 +100,56 @@ Následne vytvorte class rule pod názvom aký si zvolíte. Je na vás aký typ 
 let settings = new Rule('settings')
 ```
 
->Uistite sa že ste do rule pridali parameter **'settings'**
+>Uistite sa že ste do rule pridali parameter **'settings'**. Následne pridávajte ďalšie nastavenia.
+
+```javascript
+    let settings = new Rule('settings')
+        .setPlayerOneDivId('div1')
+        .setPlayerOneNameId('h1')
+        .setPlayerOneName('prompt')
+        .setPlayerOneNamePromptMessage('Aké je tvoje meno')
+        .build()
+```
+
+<br/>
+
+```javascript
+    .setPlayerOneDivId('div1')
+```
+
+Pomocou tohto nastavenia nastavíte Id pre divider v ktorom sa nachádza meno hráča a karty. **Za predpokladu že ste si stiahli example source code, nemusíte definovať túto hodnotu**
+
+<br/>
+
+```javascript
+    .setPlayerOneNameId('h1')
+```
+
+Pomocou tohto nastavenia nastavíte Id textu ktorý obsahuje meno hráča. **Za predpokladu že ste si stiahli example source code, nemusíte definovať túto hodnotu**
+
+<br/>
+
+```javascript
+    .setPlayerOneName('prompt')
+```
+
+Pomocou tohto nastavenia nastavíte meno hráča 1. Táto hodnota môže byť object (premenná) alebo string. Pokiaľ chcete aby bola hráčovi položená otázka na jeho meno, môžete použiť 'prompt'. *'prompt' je defaultná hodnota.*
+
+<br/>
+
+```javascript
+    .setPlayerOneNamePromptMessage('Aké je tvoje meno')
+```
+
+Za predpokladu že ste .setPlayerOneName nastavili na prompt, môžete nastaviť otázku, ktorá sa položí hráčovi. *Táto hodnota je defaultne nastavená na "Hey player one! How should we call you?*
+
+<br/>
+
+```javascript
+    .build()
+```
+
+Na úplnom konci sa musí nachádzať **.build()**. Toto nastavenie dokončí nastavovanie pravidiel.
 
 
 
