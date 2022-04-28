@@ -1,9 +1,5 @@
 import {Shuffle, Random, RandomBi} from './ssapi.js'
 
-
-
-
-
 class rule {
     constructor(_type){
         this.type = _type
@@ -14,7 +10,9 @@ class rule {
     }
 }
 
-
+/**
+ * @description Create new game rule
+ */
 
  export class Rule {
     constructor(_type){
@@ -23,8 +21,10 @@ class rule {
     }
 
     /**
-     * 
-     * @param {string} ID Id of player 1's divider 
+     * Set id for player one divider
+     * @description There is no need to fill up this parameter in case you are using example html document
+     * @default p1div
+     * @param {String} _p1divid Enter id of main div for player one
      * @returns 
      */
 
@@ -92,22 +92,8 @@ class rule {
     }
 }
 
-export var CGBE = {version: '0.1'}
-
 /**
- * This function will accept details about a person and create an object for them
- * 
- * @param {string} name 
- * @param {number} age 
- * @param {boolean} isDeveloper 
- * @deprecated this function is still working however, it wont. There is updated function for this. Check out docs
+ * @description This varieble contains all enviroment data
  */
 
-export function createPerson(name, age, isDeveloper){
-    console.warn('Function createPerson is deprecated')
-    return {
-        name: name,
-        age: age,
-        isDeveloper: isDeveloper
-    }
-}
+export var CGBE = {version: '0.1'}
