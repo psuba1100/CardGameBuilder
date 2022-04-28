@@ -1,5 +1,9 @@
 import {Shuffle, Random, RandomBi} from './ssapi.js'
 
+
+
+
+
 class rule {
     constructor(_type){
         this.type = _type
@@ -10,10 +14,19 @@ class rule {
     }
 }
 
-export class Rule {
+
+
+ export class Rule {
     constructor(_type){
         this.type = new rule(_type)
+        
     }
+
+    /**
+     * 
+     * @param {string} ID Id of player 1's divider 
+     * @returns 
+     */
 
     setPlayerOneDivId(_p1divid){
         this.type.p1divid = _p1divid
@@ -76,5 +89,25 @@ export class Rule {
     build() {
         console.log(`CARDGAMEBUILDER DEBUG: Class Rule has been created`)
         return this.type
+    }
+}
+
+export var CGBE = {version: '0.1'}
+
+/**
+ * This function will accept details about a person and create an object for them
+ * 
+ * @param {string} name 
+ * @param {number} age 
+ * @param {boolean} isDeveloper 
+ * @deprecated this function is still working however, it wont. There is updated function for this. Check out docs
+ */
+
+export function createPerson(name, age, isDeveloper){
+    console.warn('Function createPerson is deprecated')
+    return {
+        name: name,
+        age: age,
+        isDeveloper: isDeveloper
     }
 }

@@ -1,4 +1,5 @@
-import { Rule } from "./api.js";
+import { Rule, CGBE, createPerson } from "./api.js";
+
 
 window.addEventListener("load", function () {
     let playerRule = new Rule('settings')
@@ -11,6 +12,4 @@ window.addEventListener("load", function () {
         .setPlayerTwoName('prompt')
         .setPlayerTwoNamePromptMessage('OWOWOWOWOWOWOWOWO')
         .build()
-
 });
-

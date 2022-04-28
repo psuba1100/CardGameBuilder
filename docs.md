@@ -151,7 +151,20 @@ Za predpokladu že ste .setPlayerOneName nastavili na prompt, môžete nastaviť
 
 Na úplnom konci sa musí nachádzať **.build()**. Toto nastavenie dokončí nastavovanie pravidiel.
 
+Toto isté platí aj pre player two, theree a four (nezabudnite nahradiť čísla v názvoch)
 
+```javascript
+let playerRule = new Rule('settings')
+    .setPlayerOneDivId('div1')
+    .setPlayerOneNameId('h1')
+    .setPlayerOneName('prompt')
+    .setPlayerOneNamePromptMessage('Aké je tvoje meno')
+    .setPlayerTwoDivId('div2')
+    .setPlayerTwoNameId('h2')
+    .setPlayerTwoName('prompt')
+    .setPlayerTwoNamePromptMessage('Aké je tvoje meno')
+    .build()
+```
 
 
 
