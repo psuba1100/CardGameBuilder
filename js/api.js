@@ -1,5 +1,9 @@
 import {Shuffle, Random, RandomBi} from './ssapi.js'
 
+export var CGBE = {
+    version: '0.1',
+}
+
 class rule {
     constructor(_type){
         this.type = _type
@@ -20,16 +24,21 @@ class rule {
         
     }
 
+    setNumOfPlayers(_nop){
+        this.type.nop = _nop
+    }
+
     /**
      * Set id for player one divider
      * @description There is no need to fill up this parameter in case you are using example html document
-     * @default p1div
      * @param {String} _p1divid Enter id of main div for player one
      * @returns 
      */
 
-    setPlayerOneDivId(_p1divid){
-        this.type.p1divid = _p1divid
+    setPlayerOneDivId(_p1divid, _p2divid, _p3divid, _p4divid){
+        this.type.nop <= 1 ? this.type.p1divid = _p1divid : console.error('number of players and number of player divs do not match!')
+        this.type.nop <= 2 ? this.type.p2divid = _p2divid : console.error('number of players and number of player divs do not match!')
+        if(this.type.nop >= 1) this.type.p1divid = _p1divid; else console.error('')
         if(typeof this.type.p1divid != "string"){
             console.error("Value of PlayerOneDivId can't be anything else than string.")
         }
@@ -96,4 +105,4 @@ class rule {
  * @description This varieble contains all enviroment data
  */
 
-export var CGBE = {version: '0.1'}
+
