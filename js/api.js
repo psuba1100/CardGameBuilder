@@ -26,6 +26,8 @@ class rule {
 
     setNumOfPlayers(_nop){
         this.type.nop = _nop
+
+        return this
     }
 
     /**
@@ -36,12 +38,19 @@ class rule {
      */
 
     setPlayerOneDivId(_p1divid, _p2divid, _p3divid, _p4divid){
-        this.type.nop <= 1 ? this.type.p1divid = _p1divid : console.error('number of players and number of player divs do not match!')
-        this.type.nop <= 2 ? this.type.p2divid = _p2divid : console.error('number of players and number of player divs do not match!')
-        if(this.type.nop >= 1) this.type.p1divid = _p1divid; else console.error('')
-        if(typeof this.type.p1divid != "string"){
-            console.error("Value of PlayerOneDivId can't be anything else than string.")
-        }
+        var error
+        if(_p1divid == undefined && this.type.nop == 1){error = ture; console.error('number of players and number of player divs do not match!')}
+        else if(_p1divid != undefined && this.type.nop < 1){error = true; console.error('number of players and number of player divs do not match!')}
+        else this.type.p1divid = _p1divid
+
+        if(error == true) return
+        else{if(_p2divid == undefined && this.type.nop >= 2){error = true; console.error('number of players and number of player divs do not match!')}
+            else if(_p2divid != undefined && this.type.nop < 2){error = ture; console.error('number of players and number of player divs do not match!')}
+            else this.type.p2divid = _p2divid}
+
+
+
+
         return this
     }
 
